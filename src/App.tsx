@@ -1,14 +1,11 @@
-import { useState } from 'react'
-import './App.css'
+import React from 'react';
+import './App.css';
+import Calculator from './Components/Calculator';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App: React.FC = () => (
+  <div className="App">
+    <Calculator />
+  </div>
+);
 
-  return (
-    <>
-     
-    </>
-  )
-}
-
-export default App
+export default App;

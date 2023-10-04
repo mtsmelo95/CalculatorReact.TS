@@ -13,7 +13,7 @@ const History: React.FC<HistoryProps> = ({ history, onClear }) => (
         <li key={index}>{item}</li>
       ))}
     </ul>
-    <button onClick={onClear}>Clear History</button>
+    <button onClick={onClear}>Clear</button>
   </div>
 );
 

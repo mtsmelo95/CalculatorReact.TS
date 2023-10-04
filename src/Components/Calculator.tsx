@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Button from "./ButtonProps";
 import Display from "./Display";
 import History from "./History";
 
-const Calculator: React.FC = () => {
+const Calculator = ({ selectedColor }: { selectedColor: string }) => {
   const [displayValue, setDisplayValue] = useState<string>("0");
   const [history, setHistory] = useState<string[]>([]);
+  const [showHistory, setShowHistory] = useState(false);
+  
 
   const addToHistory = (expression: string) => {
     setHistory([...history, expression]);
@@ -23,7 +25,13 @@ const Calculator: React.FC = () => {
         setDisplayValue("Error");
       }
     } else if (value === "%") {
-      setDisplayValue((parseFloat(displayValue) / 100).toString());
+      try {
+        const result = (eval(displayValue) / 100).toString();
+        setDisplayValue(result);
+        addToHistory(`${displayValue} = ${result}`);
+      } catch (error) {
+        setDisplayValue("Error");
+      }
     } else if (value === "√") {
       setDisplayValue(Math.sqrt(parseFloat(displayValue)).toString());
     } else if (value === "x²") {
@@ -42,17 +50,53 @@ const Calculator: React.FC = () => {
   );
 
   return (
-    <div className="calculator">
-      <Display value={displayValue} />
-      <div className="buttons">
-        <Button onClick={() => handleButtonClick("%")} value="%" />
-        <Button onClick={() => handleButtonClick("√")} value="√" />
-        <Button onClick={() => handleButtonClick("x²")} value="x²" />
-        {["/", 7, 8, 9, "*", 4, 5, 6, "-", 1, 2, 3, "C", 0, ".", "="].map(
-          (value) => renderButton(value.toString())
-        )}
+    <div className="calculator-container">
+      <div
+        className="calculator"
+        style={{
+          backgroundColor: selectedColor,
+          color: selectedColor === "black" ? "white" : "black",
+        }}
+      >
+        <Display value={displayValue} />
+        <div className="buttons">
+          <Button onClick={() => handleButtonClick("%")} value="%" />
+          <Button onClick={() => handleButtonClick("√")} value="√" />
+          <Button onClick={() => handleButtonClick("x²")} value="x²" />
+          {[
+            "C",
+            7,
+            8,
+            9,
+            "/",
+            4,
+            5,
+            6,
+            "*",
+            1,
+            2,
+            3,
+            "-",
+            0,
+            ".",
+            "=",
+            "+",
+          ].map((value) => renderButton(value.toString()))}
+        </div>
+        <button
+          className="historyButton"
+          onClick={() => setShowHistory(!showHistory)}
+        >
+          {showHistory ? (
+            <img src="src/assets/relogio (3).png" />
+          ) : (
+            <img src="src/assets/relogio (3).png" />
+          )}
+        </button>
       </div>
-      <History history={history} onClear={() => setHistory([])} />
+      {showHistory && (
+        <History history={history} onClear={() => setHistory([])} />
+      )}
     </div>
   );
 };

@@ -7,7 +7,6 @@ const Calculator = ({ selectedColor }: { selectedColor: string }) => {
   const [displayValue, setDisplayValue] = useState<string>("0");
   const [history, setHistory] = useState<string[]>([]);
   const [showHistory, setShowHistory] = useState(false);
-  
 
   const addToHistory = (expression: string) => {
     setHistory([...history, expression]);
@@ -16,7 +15,7 @@ const Calculator = ({ selectedColor }: { selectedColor: string }) => {
   const handleButtonClick = (value: string) => {
     if (value === "C") {
       setDisplayValue("0");
-    } else if (value === "=") {
+    } else if (value === "=" || value === "Enter") {
       try {
         const result = eval(displayValue).toString();
         setDisplayValue(result);
@@ -41,6 +40,7 @@ const Calculator = ({ selectedColor }: { selectedColor: string }) => {
     }
   };
 
+  //função para renderizar os botões
   const renderButton = (value: string) => (
     <Button
       key={value}

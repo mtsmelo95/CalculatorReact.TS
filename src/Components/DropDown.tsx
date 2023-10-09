@@ -73,7 +73,7 @@ const DropDown = ({
       >
         White
       </div>
-      <div
+      {/* <div
         className="optionsSelect"
         style={{
           display: showOptions ? "block" : "none",
@@ -92,7 +92,7 @@ const DropDown = ({
         }}
       >
         Black
-      </div>
+      </div> */}
       <div
         className="optionsSelect"
         style={{

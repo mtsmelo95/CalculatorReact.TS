@@ -3,6 +3,7 @@
   flex-direction: row;
   align-items: center;
   height: 100vh;
+  color: black;
 }
 
 .calculator-container {
@@ -83,6 +84,7 @@ body{
   align-items: center;
   justify-content: center;
   background-color: #1976D2;
+  color: white;
 }
 
 .history {
@@ -125,6 +127,7 @@ body{
   border-radius: 20px;
   height: 40px;
   width: 100%;
+  margin-top: 10px;
 }
 
 .historyButton{
@@ -132,6 +135,23 @@ body{
   align-items: center;
   justify-content: center;
   width: 300px;
+  margin-top: 10px;
+}
+
+.historyName{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 290px;
+  height: 25px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.deleteButton{
+  background-color: transparent;
+  border: none;
 }
 
 .history button:hover {
@@ -157,7 +177,23 @@ body{
   cursor: pointer;
 }
 
-.dropDown{
+.optionsSelect:hover {
+  transform: scale(1.1);
+}
+
+.headerDropDown{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.containerDropdown{
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -33,7 +33,7 @@ Git
 # Instalação
 ## Clone o repositório do GitHub:
 
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/mtsmelo95/CalculatorReact.TS)
 
 ## Instale as dependências do frontend e do backend:
 

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 100vh;
+  height: 95vh;
   color: black;
 }
 
@@ -14,8 +14,6 @@
 
 .calculator {
   border: 0.5px solid #ccc;
-  border-radius: 15px;
-  box-shadow: 10px 10px 10px 10px rgba(5, 5, 5, 0.2);
   width: 300px;
   height: fit-content;
   padding: 20px;
@@ -24,6 +22,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 32px;
+  box-shadow:  16px 16px 37px #636363,
+               -16px -16px 37px #ffffff;
 }
 
 .display {
@@ -78,6 +79,99 @@ button.clear:hover {
 button:active {
   transform: scale(0.98);
 }
+
+.button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: .3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.svgIcon {
+  width: 12px;
+  transition-duration: .3s;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.button:hover {
+  width: 140px;
+  border-radius: 50px;
+  transition-duration: .3s;
+  background-color: rgb(255, 69, 69);
+  align-items: center;
+}
+
+.button:hover .svgIcon {
+  width: 50px;
+  transition-duration: .3s;
+  transform: translateY(60%);
+}
+
+.button::before {
+  position: absolute;
+  top: -20px;
+  content: "Delete";
+  color: white;
+  transition-duration: .3s;
+  font-size: 2px;
+}
+
+.button:hover::before {
+  font-size: 13px;
+  opacity: 1;
+  transform: translateY(30px);
+  transition-duration: .3s;
+}
+
+.btn {
+  display: grid;
+  place-items: center;
+  background: #e3edf7;
+  border-radius: 10px;
+  box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+	      -6px -6px 10px -1px rgba(255,255,255,0.7);
+  border: 1px solid rgba(0,0,0,0);
+  cursor: pointer;
+  transition: transform 0.5s;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 20px;
+}
+
+.btn:hover {
+  box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
+	      inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+	      -0.5px -0.5px 0px rgba(255,255,255,1),
+	      0.5px 0.5px 0px rgba(0,0,0,0.15),
+	      0px 12px 10px -10px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.1);
+  transform: translateY(0.5em);
+}
+
+.btn svg {
+  transition: transform 0.5s;
+}
+
+.btn:hover svg {
+  transform: scale(0.9);
+  fill: #333333;
+}
+
+
 
 body{
   display: flex;
@@ -175,10 +269,7 @@ body{
   background-color: transparent;
   border: none;
   cursor: pointer;
-}
-
-.optionsSelect:hover {
-  transform: scale(1.1);
+  margin-top: 3px;
 }
 
 .headerDropDown{
@@ -186,11 +277,13 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  top: 0;
-  right: 0;
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+.headerDropdown.open {
+  background-color: lightgray; /* Cor de fundo quando o dropdown está aberto */
 }
 
 .containerDropdown{
@@ -199,8 +292,8 @@ body{
   justify-content: center;
   align-items: flex-end;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 10px;
+  right: 10px;
   background-color: transparent;
   border: none;
   cursor: pointer;

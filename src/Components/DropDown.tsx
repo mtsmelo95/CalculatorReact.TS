@@ -24,7 +24,7 @@ const DropDown = ({
         onClick={() => setShowOptions(!showOptions)}
       >
         <div>
-          {selectedOption}
+          Select Color
           <img
             src="src/assets/menu-burger.png"
             alt="Dropdown Icon"

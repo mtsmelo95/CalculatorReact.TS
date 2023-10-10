@@ -9,19 +9,25 @@ A aplicação web é uma Calculadora, ela visa ser simples e com design clean, e
 # Tecnologias Utilizadas
 ## Frontend:
 React (com TypeScript)
+
 Bibliotecas adicionais (Vite e Axios)
 
 ## Backend:
 Node.js (com Express.js)
+
 Prisma Studio (como ORM)
+
 MongoDB (como banco de dados)
 
 ## Controle de Versão:
 Git/GitHub
 
 ## Pré-requisitos
+
 Node.js
+
 MongoDB
+
 Git
 
 # Instalação
@@ -32,17 +38,21 @@ git clone https://github.com/seu-usuario/seu-repositorio.git
 ## Instale as dependências do frontend e do backend:
 
 cd Calculator
+
 npm install
 
-cd ../beck
+cd beck
+
 npm install
 
 ## Inicie o servidor de desenvolvimento:
 
-cd ../Calculator  
+cd Calculator
+
 npm run dev
 
-cd ../beck
+cd beck
+
 npm nodemon main.js
 
 

@@ -194,7 +194,8 @@ body{
   width: 300px;
   height: fit-content;
   border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow:  16px 16px 37px #636363,
+  -16px -16px 37px #ffffff;
 }
 
 .history h2 {
@@ -270,6 +271,8 @@ body{
   border: none;
   cursor: pointer;
   margin-top: 3px;
+  box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+  -6px -6px 10px -1px rgba(255,255,255,0.7);
 }
 
 .headerDropDown{
@@ -280,10 +283,8 @@ body{
   background-color: transparent;
   border: none;
   cursor: pointer;
-}
-
-.headerDropdown.open {
-  background-color: lightgray; /* Cor de fundo quando o dropdown está aberto */
+  box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+  -6px -6px 10px -1px rgba(255,255,255,0.7);
 }
 
 .containerDropdown{

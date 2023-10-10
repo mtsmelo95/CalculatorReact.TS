@@ -1,4 +1,5 @@
 import axios from "axios";
+import { on } from "events";
 import React, { useEffect, useState } from "react";
 
 interface HistoryProps {
@@ -31,6 +32,8 @@ const History: React.FC<HistoryProps> = ({ history, onClear }) => {
     } catch (error) {
       console.error(error);
     }
+    setHistoryName("");
+    onClear();
   }
 
   async function getHistory() {
@@ -60,7 +63,6 @@ const History: React.FC<HistoryProps> = ({ history, onClear }) => {
         value={historyName}
         onChange={(e) => setHistoryName(e.target.value)}
       />
-
       <button onClick={() => postHistory(history, historyName)}>
         Create History
       </button>
@@ -79,14 +81,6 @@ const History: React.FC<HistoryProps> = ({ history, onClear }) => {
                     <li key={countIndex}>{count}</li>
                   ))}
                 </ul>
-                {/* <button
-                  className="deleteButton"
-                  onClick={() => {
-                    deleteHistory(item.id);
-                  }}
-                >
-                  Delete
-                </button> */}
                 <button
                   className="button"
                   onClick={() => {

@@ -51,6 +51,8 @@ cd Calculator
 
 npm run dev
 
+npm prisma studio
+
 cd beck
 
 npm nodemon main.js

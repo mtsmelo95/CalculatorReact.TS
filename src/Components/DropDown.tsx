@@ -73,26 +73,6 @@ const DropDown = ({
       >
         White
       </div>
-      {/* <div
-        className="optionsSelect"
-        style={{
-          display: showOptions ? "block" : "none",
-          backgroundColor: "black",
-          border: "1px solid black",
-          borderRadius: "15px",
-          padding: "5px",
-          width: "100px",
-          textAlign: "center",
-          cursor: "pointer",
-          color: "white",
-        }}
-        onClick={() => {
-          setSelectedColor("black");
-          setSelectedOption("black");
-        }}
-      >
-        Black
-      </div> */}
       <div
         className="optionsSelect"
         style={{

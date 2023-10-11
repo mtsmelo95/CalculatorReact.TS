@@ -275,6 +275,20 @@ body{
   -4px -4px 8px -1px rgba(255,255,255,0.7);
 }
 
+.containerDropdown:hover .optionsSelect{
+  display: block;
+  animation: fadeIn 0.7s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 2;
+  }
+}
+
 .headerDropDown{
   display: flex;
   flex-direction: column;
@@ -286,6 +300,7 @@ body{
   box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
   -6px -6px 10px -1px rgba(255,255,255,0.7);
 }
+
 
 .containerDropdown{
   display: flex;

@@ -15,7 +15,7 @@ const Calculator = ({ selectedColor }: { selectedColor: string }) => {
   const handleButtonClick = (value: string) => {
     if (value === "C") {
       setDisplayValue("0");
-    } else if (value === "=" || value === "Enter") {
+    } else if (value === "=") {
       try {
         const result = eval(displayValue).toString();
         setDisplayValue(result);
